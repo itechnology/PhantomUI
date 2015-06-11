@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="PhantomUI.exe" version="1.0.0.1" publicKeyToken="ea3e116faae4a6c2" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="PhantomUI" version="1.0.5640.18633" language="neutral" processorArchitecture="msil" />
+    <commandLine file="PhantomUI.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PhantomUI.exe" size="25560">
+      <assemblyIdentity name="PhantomUI" version="1.0.5640.18633" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>mVLmImdn6sRIWPQ5BpgnLqqxHSDKvep4e0lhkAmwo9c=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name=".gitignore" size="3102">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>q03YLPRpqZhawp0pzVd0pUUB4a301jWqMSqo+Kijh0w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="lib\phantomjs.exe" size="48602624">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>XbKWkVgPHrVB5/p16tjBasgAMuWLcMbiOP1s4dekD3E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="lib\scripts\run.js" size="412">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>b473wvgD0s1voZfLHdRrimbnCbl/lMdhxsMgwa4WTgw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhantomUI.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DAOCONSEIL-02\robert" issuerKeyHash="7faba5c3a54b5ba864bab8c54eb71b33c703f363" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Tzt8JTT5M5EQSo9iUmm40OtC9BMvyOOLPcCyILS6r1U=</DigestValue></Reference></SignedInfo><SignatureValue>mYJ8qujg44/FcxEkjsW5XbHLyzMqquOBlQ9NpPJyKhAfJmqfCNOnWw/Fqyy2DqVLKBKI54YthQp4+PBVEMnsrYwjXbRxj3WqF5TzBgO3beiurFhxNEEe11jSe0InYXNS53NXrXsoCtDbECayCE7tEkxq5qVP0HMLMgtxCFjGSy4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>yz9CH+2Sjr5mMQ8t7XxtA+EjfYcSY3QnejzWst+oL+4/SoFRGnF+bgq3N8bMjQbfrj3aqWQJ33r/nR8985z3Fv44PUD/d5SD51zQy5KmsN3oNVsV1TpsfMxt/nSeHK8W8aZF4hH0GjPsnpLrBLn9kbZYjuSk5uLDXKthyvg2o2c=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="55afbab420b2c03d8be3c82f13f442ebd0b86952628f4a109133f934257c3b4f" Description="" Url=""><as:assemblyIdentity name="PhantomUI.exe" version="1.0.0.1" publicKeyToken="ea3e116faae4a6c2" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DAOCONSEIL-02\robert</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>W9Zu65jWHfw1/FKRvleJFM6pFVqBoJ5vQP4EgXg0k5Q=</DigestValue></Reference></SignedInfo><SignatureValue>yVifRIe34dhu86Z6JEep+C5DNEQnY8QiSeaFtFG4NVqm/xIWyPovBGFXvNq7RLp7dPL63KKaJ6xFtL4Q2X5VJZaEdUnvi76EOeHEgWUePNOWstLGbHq+/zbmaNFd7q6M+yhH3ZZbfOEBG8ZFYFiAvP420EnwavijL6uVIyFhWDw=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>yz9CH+2Sjr5mMQ8t7XxtA+EjfYcSY3QnejzWst+oL+4/SoFRGnF+bgq3N8bMjQbfrj3aqWQJ33r/nR8985z3Fv44PUD/d5SD51zQy5KmsN3oNVsV1TpsfMxt/nSeHK8W8aZF4hH0GjPsnpLrBLn9kbZYjuSk5uLDXKthyvg2o2c=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQRtXKNGTblJFBXuNlc1sQsTANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigARABBAE8AQwBPAE4AUwBFAEkATAAtADAAMgBcAHIAbwBiAGUAcgB0MB4XDTE1MDYxMTA3NTUwMVoXDTE2MDYxMDEzNTUwMVowMzExMC8GA1UEAx4oAEQAQQBPAEMATwBOAFMARQBJAEwALQAwADIAXAByAG8AYgBlAHIAdDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAyz9CH+2Sjr5mMQ8t7XxtA+EjfYcSY3QnejzWst+oL+4/SoFRGnF+bgq3N8bMjQbfrj3aqWQJ33r/nR8985z3Fv44PUD/d5SD51zQy5KmsN3oNVsV1TpsfMxt/nSeHK8W8aZF4hH0GjPsnpLrBLn9kbZYjuSk5uLDXKthyvg2o2cCAwEAATANBgkqhkiG9w0BAQsFAAOBgQAw6CmFDH/lxQguh1Z6qG53vCeREFiE1YydDpeK1R9FS7ZAbZkWJ/hn4NEgPtAISKiXEdzAMf7mT5OooEIv5g5X1UrLhqIGcG7r8PlY4FeShvg8fQhJEny8NZ4cYLZkJmb04NjSfivfPbt/sA+9bS5wl7wo6dOZ+Q8TCISdWiokWw==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
