@@ -40,7 +40,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="_buttonDonate" Content="{StaticResource ResourceKey=DonateImage}" HorizontalAlignment="Left" Margin="394,0,0,0" VerticalAlignment="Top" Width="86" Click="ButtonDonateClick" Height="22" BorderThickness="0" Focusable="False" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Hidden"/>              
+        <Button x:Name="_buttonDonate" Content="{StaticResource ResourceKey=DonateImage}" HorizontalAlignment="Left" Margin="394,0,0,0" VerticalAlignment="Top" Width="86" Click="ButtonDonateClick" Height="22" BorderThickness="0" Focusable="False" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Visible"/>              
     </Grid>
 </Window>
 
