@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using System.IO;
-using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Win32;
@@ -33,6 +32,10 @@ namespace PhantomUI
 
         private async void ButtonGetAsClick(object sender, RoutedEventArgs e)
         {
+            _spinnerControl.RaiseStartAnimationEvent();
+            _spinnerControl.Visibility = Visibility.Visible;
+            
+
             PhantomJs.FileType fileType = PhantomJs.FileType.Pdf;
 
             if (_radioButtonGif.IsChecked == true)
@@ -59,6 +62,10 @@ namespace PhantomUI
             {
                 MessageBox.Show("Something went wrong ...", "Oops !", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
+
+            _spinnerControl.Visibility = Visibility.Hidden;
+            _spinnerControl.RaiseStopAnimationEvent();
         }
 
         private void ButtonBrowseClick(object sender, RoutedEventArgs e)

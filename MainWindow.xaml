@@ -1,7 +1,9 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="PhantomUI.MainWindow"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:phantomUi="clr-namespace:PhantomUI"
+    mc:Ignorable="d" x:Class="PhantomUI.MainWindow"
         Title="PhantomUI" Width="541" Height="339" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize" Icon="media/phantomjs.ico" WindowStartupLocation="CenterScreen" Background="White" WindowStyle="None" BorderThickness="1">
     <Grid Margin="10">
         <Button x:Name="_buttonExit" Content="X" HorizontalAlignment="Left" Margin="485,0,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="ButtonExitClick"/>
@@ -26,6 +28,7 @@
                     <RadioButton x:Name="_radioButtonJpeg" Content="JPEG" HorizontalAlignment="Left" Margin="85,80,0,0" VerticalAlignment="Top"/>
                     <RadioButton x:Name="_radioButtonPng" Content="PNG" HorizontalAlignment="Left" Margin="154,80,0,0" VerticalAlignment="Top"/>
                     <RadioButton x:Name="_radioButtonGif" Content="GIF" HorizontalAlignment="Left" Margin="215,80,0,0" VerticalAlignment="Top"/>
+                    <phantomUi:SpinnerControl x:Name="_spinnerControl" Margin="146,34,145,35" Width="200" Height="200" Visibility="Hidden" />
                 </Grid>
             </TabItem>
             <TabItem Header="Settings" FontFamily="Elephant" FontSize="14">
@@ -37,10 +40,11 @@
                             <GradientStop Color="#FFEAEAEA" Offset="0.209"/>
                         </LinearGradientBrush>
                     </Grid.Background>
+
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="_buttonDonate" Content="{StaticResource ResourceKey=DonateImage}" HorizontalAlignment="Left" Margin="394,0,0,0" VerticalAlignment="Top" Width="86" Click="ButtonDonateClick" Height="22" BorderThickness="0" Focusable="False" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Hidden"/>              
+        <Button x:Name="_buttonDonate" Content="{StaticResource ResourceKey=DonateImage}" HorizontalAlignment="Left" Margin="394,0,0,0" VerticalAlignment="Top" Width="86" Click="ButtonDonateClick" Height="22" BorderThickness="0" Focusable="False" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Hidden"/>
     </Grid>
 </Window>
 
