@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Win32;
@@ -47,7 +48,6 @@ namespace PhantomUI
                 fileType = PhantomJs.FileType.Png;
             }
 
-
             var phantom = new PhantomJs();
             var result  = await phantom.GetPdfTask(_textBoxUrl.Text, fileType);
 
@@ -57,7 +57,7 @@ namespace PhantomUI
             }
             else
             {
-                MessageBox.Show("Something went wrong !", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Something went wrong ...", "Oops !", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

@@ -103,7 +103,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="dist\Latest.zip" />
+    <None Include="dist\PhantomUI-latest.zip" />
     <None Include="lib\config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
