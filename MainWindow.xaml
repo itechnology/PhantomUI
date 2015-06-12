@@ -57,7 +57,9 @@
                     <CheckBox x:Name="_orientationPortrait" Content="Portrait" HorizontalAlignment="Left" Margin="25,113,0,0" VerticalAlignment="Top" FontFamily="Arial" IsChecked="True"/>
                     <Button x:Name="button_Script" Content="Open Script" HorizontalAlignment="Left" Margin="380,66,0,0" VerticalAlignment="Top" Width="101" Click="ScriptButtonClick" Background="White"/>
                     <Button x:Name="button_Config" Content="Open Config" HorizontalAlignment="Left" Margin="380,27,0,0" VerticalAlignment="Top" Width="101" Click="ConfigButtonClick" Background="White"/>
-                    <fa:ImageAwesome Icon="Github" Spin="False" HorizontalAlignment="Left" Cursor="Hand" Margin="380,156,0,10" Width="101" ToolTip="Open project page" />
+                    <Button x:Name="_buttonGitHub" HorizontalAlignment="Left" Margin="379,156,0,0" VerticalAlignment="Top" Click="ButtonGitHubClick" BorderThickness="0" Focusable="False" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Visible">
+                        <fa:ImageAwesome Icon="Github" Spin="False" HorizontalAlignment="Left" Cursor="Hand" Margin="0" Width="101" ToolTip="Open project page" />
+                    </Button>
                     <Grid HorizontalAlignment="Left" Height="138" Margin="7,11,0,0" VerticalAlignment="Top" Width="166" Background="#7FE8E8E8">
                         <Label x:Name="label1" Content="In progress" HorizontalAlignment="Left" Margin="33,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="#FF992424">
                             <Label.RenderTransform>
@@ -73,7 +75,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="_buttonGitHub" HorizontalAlignment="Left" Margin="260,0,0,0" VerticalAlignment="Top" Click="ButtonGitHubClick" BorderThickness="0" Focusable="False" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Visible"/>
     </Grid>
 </Window>
 
