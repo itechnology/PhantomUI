@@ -1,5 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Win32;
@@ -11,14 +13,21 @@ namespace PhantomUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string CurrentDirectory { get; set; }
         #region Design Specific
         public MainWindow()
         {
+            //To get the location the assembly normally resides on disk or the install directory
+            string basePath = Assembly.GetExecutingAssembly().Location;
+            string baseDir  = Path.GetDirectoryName(basePath);
+
+            CurrentDirectory = baseDir;
+
             InitializeComponent();
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
-        {
+        {            
             base.OnMouseLeftButtonDown(e);
             DragMove();
         }
@@ -63,7 +72,6 @@ namespace PhantomUI
                 MessageBox.Show("Something went wrong ...", "Oops !", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-
             _spinnerControl.Visibility = Visibility.Hidden;
             _spinnerControl.RaiseStopAnimationEvent();
         }
@@ -85,6 +93,16 @@ namespace PhantomUI
         private void ButtonDonateClick(object sender, RoutedEventArgs e)
         {
             Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mail%2esomeone%40gmail%2ecom&lc=FR&item_name=I%2dTechnology%2eNET&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted");
+        }
+
+        private void ScriptButtonClick(object sender, RoutedEventArgs e)
+        {
+            Process.Start(string.Format(@"{0}\lib\scripts\run.js", CurrentDirectory));
+        }
+
+        private void ConfigButtonClick(object sender, RoutedEventArgs e)
+        {
+            Process.Start(string.Format(@"{0}\lib\config.json", CurrentDirectory));
         }
     }
 }
