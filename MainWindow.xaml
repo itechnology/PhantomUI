@@ -6,8 +6,11 @@
     xmlns:fa="http://schemas.fontawesome.io/icons/"
     mc:Ignorable="d" x:Class="PhantomUI.MainWindow"
         Title="PhantomUI" Width="541" Height="339" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize" Icon="media/phantomjs.ico" WindowStartupLocation="CenterScreen" Background="White" WindowStyle="None" BorderThickness="1">
+    
     <Grid Margin="10">
-        <Button x:Name="_buttonExit" Content="X" HorizontalAlignment="Left" Margin="485,0,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="ButtonExitClick"/>
+        <Button x:Name="_buttonExit" HorizontalAlignment="Left" Margin="485,0,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="ButtonExitClick" Background="{x:Null}" BorderThickness="0">
+            <fa:ImageAwesome Icon="Close" Spin="False" Height="15" HorizontalAlignment="Left" Cursor="Hand" />
+        </Button>
         <TabControl HorizontalAlignment="Left" Height="299" VerticalAlignment="Top" Width="497" Margin="10,10,0,0">
             <TabItem Header="Main" FontFamily="Elephant" FontSize="14">
                 <Grid>
@@ -18,21 +21,25 @@
                             <GradientStop Color="#FFEAEAEA" Offset="0.209"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                    <Button x:Name="_buttonGetAs" Content="Convert" HorizontalAlignment="Right" Margin="0,75,110,0" VerticalAlignment="Top" Width="75" Click="ButtonGetAsClick" Background="#FFFBFAFA" />
-                    <Button x:Name="_buttonBrowse" HorizontalAlignment="Right" Margin="0,44,110,0" VerticalAlignment="Top" Click="ButtonBrowseClick" Background="White" >
+                    <Button x:Name="_buttonRun" Content="Convert" HorizontalAlignment="Right" Margin="0,75,110,0" VerticalAlignment="Top" Width="75" Click="ButtonRunClick" Background="#FFFBFAFA" />
+                    <Button x:Name="_buttonBrowse" HorizontalAlignment="Right" Margin="0,44,110,0" VerticalAlignment="Top" Click="ButtonBrowseClick" Background="{x:Null}" BorderThickness="0" >
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="FolderOpen" Spin="False" Height="15" HorizontalAlignment="Left" />
-                        </StackPanel>         
+                            <fa:ImageAwesome x:Name="browseIcon" Icon="FolderOpen" Spin="False" Height="15" HorizontalAlignment="Left" Cursor="Hand" />
+                        </StackPanel>
                     </Button>
-                    <TextBox x:Name="_textBoxUrl" HorizontalAlignment="Left" Height="23" Margin="25,42,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="326"/>
+                    <TextBox x:Name="_textBoxUrl" Margin="25,42,140,204" Style="{StaticResource PlaceHolder}" Tag="paste url or browse to file" TextWrapping="NoWrap" Width="326" Height="23" FontFamily="Arial Narrow"/>
+                    
                     <RadioButton x:Name="_radioButtonPdf" Content="PDF" HorizontalAlignment="Left" Margin="25,80,0,0" VerticalAlignment="Top" IsChecked="True"/>
                     <RadioButton x:Name="_radioButtonJpeg" Content="JPEG" HorizontalAlignment="Left" Margin="85,80,0,0" VerticalAlignment="Top"/>
                     <RadioButton x:Name="_radioButtonPng" Content="PNG" HorizontalAlignment="Left" Margin="154,80,0,0" VerticalAlignment="Top"/>
                     <RadioButton x:Name="_radioButtonGif" Content="GIF" HorizontalAlignment="Left" Margin="215,80,0,0" VerticalAlignment="Top"/>
-                    <phantomUi:SpinnerControl x:Name="_spinnerControl" Margin="146,34,145,35" Width="200" Height="200" Visibility="Hidden" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Settings" FontFamily="Elephant" FontSize="14">
+            <TabItem FontFamily="Elephant" FontSize="14">
+                <TabItem.Header>
+                    <fa:ImageAwesome Icon="Cog" Spin="False" Height="15" HorizontalAlignment="Left" Cursor="Hand" />
+                </TabItem.Header>
+
                 <Grid>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -44,17 +51,29 @@
 
                     <TextBox x:Name="_viewPortWidth" Height="23" TextAlignment="Right" TextWrapping="NoWrap" Text="1366" Margin="25,51,416,195" FontFamily="Arial Narrow" Width="50"/>
                     <TextBox x:Name="_viewPortHeight" Height="23" TextAlignment="Left" TextWrapping="NoWrap" Text="768" Margin="102,51,339,195" FontFamily="Arial Narrow"/>
-                    <Label x:Name="label_ViewPort" Content="Viewport size" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" FontFamily="Arial"/>
+                    <Label x:Name="label_ViewPort" Content="Viewport size" HorizontalAlignment="Left" Margin="19,20,0,0" VerticalAlignment="Top" FontFamily="Arial"/>
                     <Label x:Name="label" Content="x" HorizontalAlignment="Left" Margin="80,51,0,0" VerticalAlignment="Top" FontFamily="Arial"/>
-                    <Label x:Name="label_Orientation" Content="Orientation" HorizontalAlignment="Left" Margin="25,82,0,0" VerticalAlignment="Top" FontFamily="Arial"/>
+                    <Label x:Name="label_Orientation" Content="Orientation" HorizontalAlignment="Left" Margin="19,82,0,0" VerticalAlignment="Top" FontFamily="Arial"/>
                     <CheckBox x:Name="_orientationPortrait" Content="Portrait" HorizontalAlignment="Left" Margin="25,113,0,0" VerticalAlignment="Top" FontFamily="Arial" IsChecked="True"/>
-                    <Button x:Name="button_Script" Content="Open Script" HorizontalAlignment="Left" Margin="380,66,0,0" VerticalAlignment="Top" Width="101" Click="ScriptButtonClick"/>
-                    <Button x:Name="button_Config" Content="Open Config" HorizontalAlignment="Left" Margin="380,27,0,0" VerticalAlignment="Top" Width="101" Click="ConfigButtonClick"/>
-
+                    <Button x:Name="button_Script" Content="Open Script" HorizontalAlignment="Left" Margin="380,66,0,0" VerticalAlignment="Top" Width="101" Click="ScriptButtonClick" Background="White"/>
+                    <Button x:Name="button_Config" Content="Open Config" HorizontalAlignment="Left" Margin="380,27,0,0" VerticalAlignment="Top" Width="101" Click="ConfigButtonClick" Background="White"/>
+                    <fa:ImageAwesome Icon="Github" Spin="False" HorizontalAlignment="Left" Cursor="Hand" Margin="380,156,0,10" Width="101" ToolTip="Open project page" />
+                    <Grid HorizontalAlignment="Left" Height="138" Margin="7,11,0,0" VerticalAlignment="Top" Width="166" Background="#7FE8E8E8">
+                        <Label x:Name="label1" Content="In progress" HorizontalAlignment="Left" Margin="33,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="#FF992424">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-30.899"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+                    </Grid>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="_buttonDonate" Content="{StaticResource ResourceKey=DonateImage}" HorizontalAlignment="Left" Margin="394,0,0,0" VerticalAlignment="Top" Width="86" Click="ButtonDonateClick" Height="22" BorderThickness="0" Focusable="False" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Hidden"/>
+        <Button x:Name="_buttonGitHub" HorizontalAlignment="Left" Margin="260,0,0,0" VerticalAlignment="Top" Click="ButtonGitHubClick" BorderThickness="0" Focusable="False" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Visibility="Visible"/>
     </Grid>
 </Window>
 

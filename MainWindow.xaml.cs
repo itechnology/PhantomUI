@@ -13,17 +13,18 @@ namespace PhantomUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public string CurrentDirectory { get; set; }
-        #region Design Specific
+        #region Init
+        public string ApplicationDirectory { get; set; }
+
         public MainWindow()
         {
             //To get the location the assembly normally resides on disk or the install directory
             string basePath = Assembly.GetExecutingAssembly().Location;
             string baseDir  = Path.GetDirectoryName(basePath);
 
-            CurrentDirectory = baseDir;
-
-            InitializeComponent();
+            ApplicationDirectory = baseDir;
+            
+            InitializeComponent();            
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
@@ -38,12 +39,11 @@ namespace PhantomUI
         }
         #endregion
 
-
-        private async void ButtonGetAsClick(object sender, RoutedEventArgs e)
+        private async void ButtonRunClick(object sender, RoutedEventArgs e)
         {
-            _spinnerControl.RaiseStartAnimationEvent();
-            _spinnerControl.Visibility = Visibility.Visible;
-            
+            browseIcon.Icon       = FontAwesome.WPF.FontAwesomeIcon.Spinner;
+            browseIcon.Spin       = true;
+            _buttonRun.Visibility = Visibility.Hidden;
 
             PhantomJs.FileType fileType = PhantomJs.FileType.Pdf;
 
@@ -72,8 +72,9 @@ namespace PhantomUI
                 MessageBox.Show("Something went wrong ...", "Oops !", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            _spinnerControl.Visibility = Visibility.Hidden;
-            _spinnerControl.RaiseStopAnimationEvent();
+            browseIcon.Icon       = FontAwesome.WPF.FontAwesomeIcon.Folder;
+            browseIcon.Spin       = false;
+            _buttonRun.Visibility = Visibility.Visible;
         }
 
         private void ButtonBrowseClick(object sender, RoutedEventArgs e)
@@ -90,19 +91,19 @@ namespace PhantomUI
             }
         }
 
-        private void ButtonDonateClick(object sender, RoutedEventArgs e)
+        private void ButtonGitHubClick(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mail%2esomeone%40gmail%2ecom&lc=FR&item_name=I%2dTechnology%2eNET&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted");
+            Process.Start("https://github.com/itechnology/PhantomUI");
         }
 
         private void ScriptButtonClick(object sender, RoutedEventArgs e)
         {
-            Process.Start(string.Format(@"{0}\lib\scripts\run.js", CurrentDirectory));
+            Process.Start(string.Format(@"{0}\lib\scripts\run.js", ApplicationDirectory));
         }
 
         private void ConfigButtonClick(object sender, RoutedEventArgs e)
         {
-            Process.Start(string.Format(@"{0}\lib\config.json", CurrentDirectory));
+            Process.Start(string.Format(@"{0}\lib\config.json", ApplicationDirectory));
         }
     }
 }

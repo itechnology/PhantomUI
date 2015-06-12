@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -8,6 +9,7 @@ namespace PhantomUI
 {
     public class PhantomJs
     {
+        #region Init
         public enum FileType
         {
             Gif,
@@ -16,6 +18,34 @@ namespace PhantomUI
             Pdf
         }
 
+        public string ApplicationDirectory { get; set; }
+
+        public PhantomJs() {
+            string basePath = Assembly.GetExecutingAssembly().Location;
+            string baseDir  = Path.GetDirectoryName(basePath);
+
+            ApplicationDirectory = baseDir;
+        }
+        #endregion
+
+        #region NewCode
+        /// <summary>
+        /// Not implemented
+        /// Changing code to be able to pass in options more easily
+        /// </summary>
+        public async Task<string> RunPhantomJs(List<string> options, List<string> arguments)
+        {
+            return await Task.Run(() => Start(options, arguments));
+        }
+
+        private string Start(List<string> options, List<string> arguments)
+        {
+            return "";
+        }
+        #endregion
+
+
+        #region OldCode
         public async Task<string> GetPdfTask(string url, FileType returnType)
         {
             return await Task.Run(() => UrlToPdf(url, returnType));
@@ -23,11 +53,7 @@ namespace PhantomUI
 
         private string UrlToPdf(string url, FileType returnType)
         {
-            //To get the location the assembly normally resides on disk or the install directory
-            string basePath = Assembly.GetExecutingAssembly().Location;
-            string baseDir  = Path.GetDirectoryName(basePath);
-
-            var path = string.Format(@"{0}\lib\phantomjs-custom.exe", baseDir);
+            var path = string.Format(@"{0}\lib\phantomjs-custom.exe", ApplicationDirectory);
 
             if (string.IsNullOrEmpty(path) || !File.Exists(path))
             {
@@ -75,5 +101,6 @@ namespace PhantomUI
 
             return savePath;
         }
+        #endregion
     }
 }
