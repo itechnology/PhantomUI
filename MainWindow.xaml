@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:phantomUi="clr-namespace:PhantomUI"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
     mc:Ignorable="d" x:Class="PhantomUI.MainWindow"
         Title="PhantomUI" Width="541" Height="339" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize" Icon="media/phantomjs.ico" WindowStartupLocation="CenterScreen" Background="White" WindowStyle="None" BorderThickness="1">
     <Grid Margin="10">
@@ -17,11 +18,11 @@
                             <GradientStop Color="#FFEAEAEA" Offset="0.209"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                    <Button x:Name="_buttonGetAs" Content="Get As" HorizontalAlignment="Right" Margin="0,77,140,0" VerticalAlignment="Top" Width="75" Click="ButtonGetAsClick" Background="#FFFBFAFA" />
-                    <Button x:Name="_buttonBrowse" Content="Browse" HorizontalAlignment="Right" Margin="0,42,60,0" VerticalAlignment="Top" Width="75" Click="ButtonBrowseClick" Background="White" >
-                        <Button.Effect>
-                            <DropShadowEffect Direction="314"/>
-                        </Button.Effect>
+                    <Button x:Name="_buttonGetAs" Content="Convert" HorizontalAlignment="Right" Margin="0,75,110,0" VerticalAlignment="Top" Width="75" Click="ButtonGetAsClick" Background="#FFFBFAFA" />
+                    <Button x:Name="_buttonBrowse" HorizontalAlignment="Right" Margin="0,44,110,0" VerticalAlignment="Top" Click="ButtonBrowseClick" Background="White" >
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome Icon="FolderOpen" Spin="False" Height="15" HorizontalAlignment="Left" />
+                        </StackPanel>         
                     </Button>
                     <TextBox x:Name="_textBoxUrl" HorizontalAlignment="Left" Height="23" Margin="25,42,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="326"/>
                     <RadioButton x:Name="_radioButtonPdf" Content="PDF" HorizontalAlignment="Left" Margin="25,80,0,0" VerticalAlignment="Top" IsChecked="True"/>
@@ -40,6 +41,15 @@
                             <GradientStop Color="#FFEAEAEA" Offset="0.209"/>
                         </LinearGradientBrush>
                     </Grid.Background>
+
+                    <TextBox x:Name="_viewPortWidth" Height="23" TextAlignment="Right" TextWrapping="NoWrap" Text="1366" Margin="25,51,416,195" FontFamily="Arial Narrow" Width="50"/>
+                    <TextBox x:Name="_viewPortHeight" Height="23" TextAlignment="Left" TextWrapping="NoWrap" Text="768" Margin="102,51,339,195" FontFamily="Arial Narrow"/>
+                    <Label x:Name="label_ViewPort" Content="Viewport size" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" FontFamily="Arial"/>
+                    <Label x:Name="label" Content="x" HorizontalAlignment="Left" Margin="80,51,0,0" VerticalAlignment="Top" FontFamily="Arial"/>
+                    <Label x:Name="label_Orientation" Content="Orientation" HorizontalAlignment="Left" Margin="25,82,0,0" VerticalAlignment="Top" FontFamily="Arial"/>
+                    <CheckBox x:Name="_orientationPortrait" Content="Portrait" HorizontalAlignment="Left" Margin="25,113,0,0" VerticalAlignment="Top" FontFamily="Arial" IsChecked="True"/>
+                    <Button x:Name="button_Script" Content="Open Script" HorizontalAlignment="Left" Margin="380,66,0,0" VerticalAlignment="Top" Width="101" Click="ScriptButtonClick"/>
+                    <Button x:Name="button_Config" Content="Open Config" HorizontalAlignment="Left" Margin="380,27,0,0" VerticalAlignment="Top" Width="101" Click="ConfigButtonClick"/>
 
                 </Grid>
             </TabItem>

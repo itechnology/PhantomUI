@@ -68,8 +68,8 @@ namespace PhantomUI
                 process.StartInfo.FileName         = fileName;
                 process.StartInfo.Arguments        = arguments;
                 process.StartInfo.WorkingDirectory = dir;
-                process.Start();
 
+                process.Start();
                 process.WaitForExit(10000);
             }
 
