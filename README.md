@@ -10,3 +10,5 @@ Currently supports capturing screenshots in PDF, JPEG, PNG & GIF on distant (htt
 #### Latest version in /dist folder.
 
 Portable-App, unzip and run. No install required.
+
+Download [.zip](http://itechnology.github.io/PhantomUI/dist/PhantomUI-latest.zip)
