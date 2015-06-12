@@ -27,7 +27,7 @@ namespace PhantomUI
             string basePath = Assembly.GetExecutingAssembly().Location;
             string baseDir  = Path.GetDirectoryName(basePath);
 
-            var path = string.Format(@"{0}\lib\phantomjs.exe", baseDir);
+            var path = string.Format(@"{0}\lib\phantomjs-custom.exe", baseDir);
 
             if (string.IsNullOrEmpty(path) || !File.Exists(path))
             {

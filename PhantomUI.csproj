@@ -133,7 +133,7 @@
     <Resource Include="media\spinnermask.png" />
     <Resource Include="media\btn_donate_SM.gif" />
     <Resource Include="media\phantomjs.ico" />
-    <Content Include="lib\phantomjs.exe">
+    <Content Include="lib\phantomjs-custom.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
