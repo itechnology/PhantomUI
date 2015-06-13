@@ -128,7 +128,8 @@
     <Content Include="lib\scripts\run.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="media\PhantomUI.jpg" />
+    <Resource Include="media\PhantomUI.png" />
+    <Resource Include="media\capture.png" />
     <Resource Include="media\phantomjs.ico" />
     <Content Include="lib\phantomjs-custom.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

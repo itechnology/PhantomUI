@@ -32,7 +32,6 @@
                     <RadioButton x:Name="_radioButtonPdf" Content="PDF" HorizontalAlignment="Left" Margin="25,80,0,0" VerticalAlignment="Top" IsChecked="True"/>
                     <RadioButton x:Name="_radioButtonJpeg" Content="JPEG" HorizontalAlignment="Left" Margin="85,80,0,0" VerticalAlignment="Top"/>
                     <RadioButton x:Name="_radioButtonPng" Content="PNG" HorizontalAlignment="Left" Margin="154,80,0,0" VerticalAlignment="Top"/>
-                    <RadioButton x:Name="_radioButtonGif" Content="GIF" HorizontalAlignment="Left" Margin="215,80,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
             <TabItem FontFamily="Elephant" FontSize="14">

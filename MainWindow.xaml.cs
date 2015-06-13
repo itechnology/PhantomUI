@@ -47,11 +47,7 @@ namespace PhantomUI
 
             PhantomJs.FileType fileType = PhantomJs.FileType.Pdf;
 
-            if (_radioButtonGif.IsChecked == true)
-            {
-                fileType = PhantomJs.FileType.Gif;
-            }
-            else if (_radioButtonJpeg.IsChecked == true)
+            if (_radioButtonJpeg.IsChecked == true)
             {
                 fileType = PhantomJs.FileType.Jpeg;
             }

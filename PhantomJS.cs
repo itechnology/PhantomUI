@@ -12,10 +12,9 @@ namespace PhantomUI
         #region Init
         public enum FileType
         {
-            Gif,
+            Pdf,
             Jpeg,
-            Png,
-            Pdf
+            Png            
         }
 
         public string ApplicationDirectory { get; set; }

@@ -1,20 +1,19 @@
-# PhantomUI
+## PhantomUI + HTML5 + CSS3 = PDF/IMAGE
 
-#### Latest Version :: Download [.zip](http://itechnology.github.io/PhantomUI/dist/PhantomUI-latest.zip)
+#### Download [.zip](http://itechnology.github.io/PhantomUI/dist/PhantomUI-latest.zip) :: Portable-App, unzip and run. No install required.
 
 ---
 
 UI frontend for PhantomJS on Windows *(requires .NET 4.5)*
 
-Currently supports capturing screenshots in PDF, JPEG, PNG & GIF on distant (http://) and local sites (file://)
-
-
-![PhantomUI](http://itechnology.github.io/PhantomUI/media/PhantomUI.jpg)
+Currently supports capturing screenshots in PDF, JPEG, & PNG on distant (http://) and local sites (file://)
 
 ---
 
-#### Latest version in /dist folder.
+#### 1) Launch app
+![PhantomUI](http://itechnology.github.io/PhantomUI/media/PhantomUI.png)
 
-Portable-App, unzip and run. No install required.
 
+#### 2) Convert to desired format
 
+![PhantomUI](http://itechnology.github.io/PhantomUI/media/capture.png)
